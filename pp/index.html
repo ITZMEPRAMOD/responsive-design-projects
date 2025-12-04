@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <header>CSS Grid Layout</header>
+        
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#The_Grid_Container">The Grid Container</a>
+        <a class="nav-link" href="#Grid_Items">Grid Items</a>
+        <a class="nav-link" href="#Creating_Tracks">Creating Tracks</a>
+        <a class="nav-link" href="#Grid_Template_Areas">Grid Template Areas</a>
+    </nav>
+
+    <main id="main-doc">
+        
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            
+            <p>
+                CSS Grid Layout is a **two-dimensional layout system** for the web. It allows you to design and structure content not only in columns but also in rows, making complex responsive layouts simpler to achieve compared to older methods like floats or flexbox (which is one-dimensional).
+            </p>
+            <p>
+                Grid works by defining **rows and columns** (called tracks) within a parent element, the grid container, and then placing the children of that container (the grid items) into the defined cells.
+            </p>
+            
+            <ul>
+                <li>Grid is excellent for main page layout.</li>
+                <li>Grid is a specification developed by the W3C.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="The_Grid_Container">
+            <header>The Grid Container</header>
+            
+            <p>
+                To start using CSS Grid, you must first define a parent element as a grid container. This is done using the <code>display</code> property.
+            </p>
+            
+            <p>The main declaration:</p>
+            <code>
+                .container {<br>
+                &nbsp;&nbsp;display: grid;<br>
+                }
+            </code>
+            
+            <p>
+                The container acts as the foundation upon which all other grid properties are applied. All **direct children** of the grid container automatically become **grid items**.
+            </p>
+            <ul>
+                <li>The container holds all grid properties.</li>
+                <li>A container can be defined as <code>display: inline-grid;</code> as well.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Grid_Items">
+            <header>Grid Items</header>
+            
+            <p>
+                Grid items are the elements inside the grid container. They can be placed or positioned within the grid's cells using properties that reference the grid lines or tracks.
+            </p>
+            
+            <p>
+                Key properties for positioning items include <code>grid-column-start</code>, <code>grid-column-end</code>, <code>grid-row-start</code>, and <code>grid-row-end</code>. These can be combined into shorthands.
+            </p>
+
+            <p>Example of shorthand:</p>
+            <code>
+                .item-a {<br>
+                &nbsp;&nbsp;/* Starts at line 1, ends before line 4 */<br>
+                &nbsp;&nbsp;grid-column: 1 / 4;<br>
+                }
+            </code>
+            
+            <ul>
+                <li>Grid items are direct children only.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Creating_Tracks">
+            <header>Creating Tracks</header>
+            
+            <p>
+                Tracks (rows and columns) are created using the <code>grid-template-columns</code> and <code>grid-template-rows</code> properties. These properties take a space-separated list of values, where each value represents the size of a track.
+            </p>
+            
+            <p>
+                A common unit for sizing tracks is the **fractional unit (<code>fr</code>)**, which represents a fraction of the available free space in the grid container.
+            </p>
+
+            <p>Defining a basic 3-column layout:</p>
+            <code>
+                .container {<br>
+                &nbsp;&nbsp;grid-template-columns: 1fr 2fr 1fr;<br>
+                }
+            </code>
+            
+            <p>Using the <code>repeat()</code> function is also common for repetitive track sizes.</p>
+            <code>
+                .container {<br>
+                &nbsp;&nbsp;grid-template-columns: repeat(5, 100px);<br>
+                }
+            </code>
+            
+            <ul>
+                <li>The <code>fr</code> unit is key for responsive tracks.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Grid_Template_Areas">
+            <header>Grid Template Areas</header>
+            
+            <p>
+                The <code>grid-template-areas</code> property allows you to define a grid layout visually by naming the areas that the grid items will occupy. This makes the layout much easier to understand at a glance.
+            </p>
+            
+            <p>
+                First, define a name for each item using the <code>grid-area</code> property on the item itself. Then, use the <code>grid-template-areas</code> property on the container.
+            </p>
+
+            <p>Visual layout definition:</p>
+            <code>
+                .container {<br>
+                &nbsp;&nbsp;grid-template-areas: <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;"header header header"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;"nav main aside"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;"footer footer footer";<br>
+                }
+            </code>
+            
+            <p>
+                Any cell with a dot (<code>.</code>) will be an empty cell. Cells with the same name span that area. This technique is often considered the cleanest way to manage a complex layout.
+            </p>
+            
+            </section>
+        
+    </main>
+</body>
+</html>

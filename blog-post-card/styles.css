@@ -1,0 +1,45 @@
+.blog-post-card{
+  background-color: white;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+
+}
+.read-more{
+  color: #ffffff;
+  background-color: #45ff55;
+  margin: 8px 15px;
+  padding: 10px 0 0 0;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+}
+.read-more:hover {
+    background-color: #ffde00; /* Yellow background on hover */
+    box-shadow: 2px 2px 0 #333; /* Subtle shadow change on hover */
+}
+.post-excerpt {
+    color: #555; /* Darker gray for excerpt text */
+    margin: 0 0 20px 0; /* Margins on all sides (top, right/left, bottom) */
+    line-height: 1.4;
+}
+
+.post-content {
+    padding: 20px; /* Padding inside the card */
+}
+
+/* User Story 7: Styles for .post-title and .post-excerpt */
+.post-title {
+    color: #ff44aa; /* Pink title color */
+    margin: 0 0 10px 0; /* Margins on all sides (top, right/left, bottom) */
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+
+.post-img {
+    width: 100%; /* Image fills the card's entire width */
+    height: auto;
+    display: block; /* Removes any default bottom spacing for images */
+    border-bottom: 5px dashed #55ff55; /* Green dashed bottom border */
+}
